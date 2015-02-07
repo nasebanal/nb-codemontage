@@ -2,7 +2,13 @@
 # Cookbook Name:: start
 # Recipe:: default
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, NASEBANAL
 #
 # All rights reserved - Do Not Redistribute
 #
+
+## Start sshd
+
+service "sshd" do
+	action :start
+end
