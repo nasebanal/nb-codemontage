@@ -11,10 +11,11 @@
 
 directory node['ruby']['working_dir'] do
 	action :create
+	mode "0777"
 end
 
 
-## Copy install
+## Copy install sh
 
 cookbook_file node['ruby']['install_sh_path'] do
 	source node['ruby']['install_sh']
@@ -39,11 +40,33 @@ end
 bash 'install gems' do
 	user 'codemontage'
 	action :run
-	cwd node['codemontage']['install_dir']
-	environment "HOME" => "/home/codemontage"
+	environment "HOME" => node['ruby']['home_dir']
 	code <<-EOH
 source ~/.bash_profile
 gem install rake -v '10.4.2'
 gem install serverspec -v '2.8.2'
 EOH
 end
+
+
+## Copy serverspec_init.txt
+
+cookbook_file node['ruby']['serverspec_init_path'] do
+	source node['ruby']['serverspec_init']
+	mode "0755"
+end
+
+
+## Create serverspec files
+
+bash 'create serverspec files' do
+	user 'codemontage'
+	action :run
+	environment "HOME" => node['ruby']['home_dir']
+	cwd node['ruby']['working_dir']
+	code <<-EOH
+source ~/.bash_profile
+serverspec-init < #{node['ruby']['serverspec_init_path']}
+EOH
+end
+
