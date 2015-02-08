@@ -1,7 +1,11 @@
 # CodeMontage
 
 [Component]
+* which 2.19
+* tar 1.23
 * openssh-server 5.3
+* rvm 1.26.9
+* ruby 2.1.3
 
 
 [Prerequisite]
