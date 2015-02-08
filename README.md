@@ -11,8 +11,10 @@
 * postgresql 8.4.20
 * postgresql-devel 8.4.20
 * gem (rake) 10.4.2
+* gem (rails) 4.2.0
 * gem (serverspec) 2.8.2
 * gem (highline) 1.6.21
+* nodejs 0.10.33
 
 
 [Prerequisite]

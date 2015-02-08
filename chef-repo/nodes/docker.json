@@ -6,6 +6,7 @@
 		"recipe[ssh]",
 		"recipe[ruby]",
 		"recipe[postgresql]",
+		"recipe[nodejs]",
 		"recipe[codemontage]",
 		"recipe[test]"
 	]

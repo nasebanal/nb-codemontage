@@ -31,6 +31,7 @@ bash 'install rvm' do
 	code <<-EOH
 #{node['ruby']['install_sh_path']} #{node['ruby']['key_url']} #{node['ruby']['recv_keys']} #{node['ruby']['site_url']} 1.26.9 2.1.5 #{node['ruby']['working_dir']}
 chown -R codemontage:codemontage /usr/local/rvm
+chown -R codemontage:codemontage /opt/chef
 EOH
 end
 
@@ -44,6 +45,7 @@ bash 'install gems' do
 	code <<-EOH
 source ~/.bash_profile
 gem install rake -v '10.4.2'
+gem install rails -v '4.2.0'
 gem install serverspec -v '2.8.2'
 gem install highline -v '1.6.21'
 EOH
