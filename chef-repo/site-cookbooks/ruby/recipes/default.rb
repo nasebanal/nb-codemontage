@@ -37,9 +37,12 @@ end
 ## Install gems
 
 bash 'install gems' do
+	user 'codemontage'
 	action :run
 	cwd node['codemontage']['install_dir']
+	environment "HOME" => "/home/codemontage"
 	code <<-EOH
+source ~/.bash_profile
 gem install rake -v '10.4.2'
 gem install serverspec -v '2.8.2'
 EOH

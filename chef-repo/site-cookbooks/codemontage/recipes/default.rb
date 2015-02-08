@@ -27,9 +27,10 @@ end
 bash 'install codemontage' do
 	user 'codemontage'
 	action :run
+	environment "HOME" => "/home/codemontage"
 	cwd node['codemontage']['home_dir']
 	code <<-EOH
-source /etc/profile.d/rvm.sh
+source ~/.bash_profile
 bundle install
 EOH
 end
