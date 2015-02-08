@@ -86,4 +86,4 @@ if [ $RUBY_INSTALL -eq 1 ]; then
 	rvm install $RUBY_VER
 fi
 
-rvm default $RUBY_VER
+rvm default $RUBY_SET

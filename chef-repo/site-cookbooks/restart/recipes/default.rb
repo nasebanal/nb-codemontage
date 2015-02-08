@@ -12,3 +12,10 @@
 service "sshd" do
 	action :restart
 end
+
+
+## Restart postgresql
+
+service "postgresql" do
+	action :restart
+end

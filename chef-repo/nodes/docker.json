@@ -4,6 +4,7 @@
 		"recipe[user]",
 		"recipe[ssh]",
 		"recipe[ruby]",
+		"recipe[postgresql]",
 		"recipe[codemontage]"
 	]
 }

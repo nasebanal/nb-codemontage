@@ -12,3 +12,10 @@
 service "sshd" do
 	action :start
 end
+
+
+## Start postgresql
+
+service "postgresql" do
+	action :start
+end

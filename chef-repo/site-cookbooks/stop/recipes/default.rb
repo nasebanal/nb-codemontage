@@ -12,3 +12,10 @@
 service "sshd" do
 	action :stop
 end
+
+
+## Stop postgresql
+
+service "postgresql" do
+	action :stop
+end

@@ -13,3 +13,10 @@ package "openssh-server" do
 	action :upgrade
 	version "5.3"
 end
+
+
+## Enable sshd
+
+service "sshd" do
+	action [ :enable, :start ]
+end

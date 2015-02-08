@@ -29,3 +29,11 @@ package "git" do
 	action :upgrade
 	version "1.7.1"
 end
+
+
+## Install sudo
+
+package "sudo" do
+	action :upgrade
+	version "1.8.6"
+end

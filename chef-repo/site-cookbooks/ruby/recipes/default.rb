@@ -29,5 +29,18 @@ bash 'install rvm' do
 	cwd node['ruby']['working_dir']
 	code <<-EOH
 #{node['ruby']['install_sh_path']} #{node['ruby']['key_url']} #{node['ruby']['recv_keys']} #{node['ruby']['site_url']} 1.26.9 2.1.5 #{node['ruby']['working_dir']}
+chown -R codemontage:codemontage /usr/local/rvm
+EOH
+end
+
+
+## Install gems
+
+bash 'install gems' do
+	action :run
+	cwd node['codemontage']['install_dir']
+	code <<-EOH
+gem install rake -v '10.4.2'
+gem install serverspec -v '2.8.2'
 EOH
 end

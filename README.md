@@ -4,9 +4,14 @@
 * which 2.19
 * tar 1.23
 * git 1.7.1
+* sudo 1.8.6
 * openssh-server 5.3
 * rvm 1.26.9
 * ruby 2.1.5
+* postgresql 8.4.20
+* postgresql-devel 8.4.20
+* gem (rake) 10.4.2
+* gem (serverspec) 2.8.2
 
 
 [Prerequisite]
