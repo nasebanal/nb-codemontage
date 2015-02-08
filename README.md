@@ -3,9 +3,10 @@
 [Component]
 * which 2.19
 * tar 1.23
+* git 1.7.1
 * openssh-server 5.3
 * rvm 1.26.9
-* ruby 2.1.3
+* ruby 2.1.5
 
 
 [Prerequisite]

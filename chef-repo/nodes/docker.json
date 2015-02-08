@@ -3,6 +3,7 @@
 		"recipe[base]",
 		"recipe[user]",
 		"recipe[ssh]",
-		"recipe[ruby]"
+		"recipe[ruby]",
+		"recipe[codemontage]"
 	]
 }

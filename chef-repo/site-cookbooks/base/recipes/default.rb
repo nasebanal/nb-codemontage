@@ -21,3 +21,11 @@ package "tar" do
 	action :upgrade
 	version "1.23"
 end
+
+
+## Install git
+
+package "git" do
+	action :upgrade
+	version "1.7.1"
+end

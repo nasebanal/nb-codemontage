@@ -28,6 +28,6 @@ bash 'install rvm' do
 	action :run
 	cwd node['ruby']['working_dir']
 	code <<-EOH
-#{node['ruby']['install_sh_path']} #{node['ruby']['key_url']} #{node['ruby']['recv_keys']} #{node['ruby']['site_url']} 1.26.9 2.1.3 #{node['ruby']['working_dir']}
+#{node['ruby']['install_sh_path']} #{node['ruby']['key_url']} #{node['ruby']['recv_keys']} #{node['ruby']['site_url']} 1.26.9 2.1.5 #{node['ruby']['working_dir']}
 EOH
 end
