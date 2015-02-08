@@ -1,10 +1,12 @@
 {
 	"run_list" : [
+		"yum",
 		"recipe[base]",
 		"recipe[user]",
 		"recipe[ssh]",
 		"recipe[ruby]",
 		"recipe[postgresql]",
-		"recipe[codemontage]"
+		"recipe[codemontage]",
+		"recipe[test]"
 	]
 }

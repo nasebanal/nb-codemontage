@@ -45,28 +45,7 @@ bash 'install gems' do
 source ~/.bash_profile
 gem install rake -v '10.4.2'
 gem install serverspec -v '2.8.2'
-EOH
-end
-
-
-## Copy serverspec_init.txt
-
-cookbook_file node['ruby']['serverspec_init_path'] do
-	source node['ruby']['serverspec_init']
-	mode "0755"
-end
-
-
-## Create serverspec files
-
-bash 'create serverspec files' do
-	user 'codemontage'
-	action :run
-	environment "HOME" => node['ruby']['home_dir']
-	cwd node['ruby']['working_dir']
-	code <<-EOH
-source ~/.bash_profile
-serverspec-init < #{node['ruby']['serverspec_init_path']}
+gem install highline -v '1.6.21'
 EOH
 end
 
