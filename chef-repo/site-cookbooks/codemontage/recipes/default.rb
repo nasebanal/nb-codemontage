@@ -22,6 +22,16 @@ EOH
 end
 
 
+## Copy database.yml
+
+template '/opt/codemontage/config/database.yml' do
+	source 'database.yml'
+	owner 'codemontage'
+	group 'codemontage'
+	mode '0666'
+end
+
+
 ## Install Code Montage
 
 bash 'install codemontage' do
@@ -32,5 +42,8 @@ bash 'install codemontage' do
 	code <<-EOH
 source ~/.bash_profile
 bundle install
+rake db:create
+rake db:migrate
+rake db:seed
 EOH
 end

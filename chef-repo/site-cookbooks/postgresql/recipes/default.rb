@@ -62,15 +62,19 @@ end
 
 cookbook_file node['postgres']['create_role_path'] do
 	source node['postgres']['create_role']
-	mode "0755"
+	mode "0666"
 end
 
 
 ## Create Role
 
 bash 'create role' do
+	user 'codemontage'
 	action :run
+	cwd node['postgres']['home_dir']
+	environment "HOME" => node['postgres']['home_dir']
 	code <<-EOH
+source ~/.bash_profile
 psql -d postgres -U postgres < #{node['postgres']['create_role_path']}
 EOH
 end

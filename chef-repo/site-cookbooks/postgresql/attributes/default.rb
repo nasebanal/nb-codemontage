@@ -1,5 +1,6 @@
 ## Directory
 
+default['postgres']['home_dir'] = '/home/codemontage'
 default['postgres']['working_dir'] = ::File.join(Chef::Config[:file_cache_path], 'postgres')
 
 
